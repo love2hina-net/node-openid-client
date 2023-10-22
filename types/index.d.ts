@@ -227,7 +227,14 @@ export interface DeviceAuthorizationParameters {
   [key: string]: unknown;
 }
 
+export interface GrantAuthorizationExtras {
+  grant_type?: string;
+  device_code: boolean;
+  user_code: boolean;
+}
+
 export interface DeviceAuthorizationExtras {
+  grantAuthorization?: GrantAuthorizationExtras;
   exchangeBody?: object;
   clientAssertionPayload?: object;
   DPoP?: DPoPInput;
